@@ -8,6 +8,7 @@ import (
 	"os"
 )
 
+//PassThru ...
 type PassThru struct {
 	io.Reader
 	curr  int64
