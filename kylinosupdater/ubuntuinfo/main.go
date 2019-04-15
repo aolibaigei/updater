@@ -20,7 +20,7 @@ func (v *Vulnerability) getInfo() (string, string, string, string) {
 	return v.Name, v.Severity, v.Package, v.Version
 }
 
-var cvefile = "E:\\github\\ubuntu-cve-tracker\\retired"
+var cvefile = "E:\\github\\ubuntu-cve-tracker\\active"
 
 func main() {
 	files, _ := ioutil.ReadDir(cvefile)
@@ -67,12 +67,12 @@ func main() {
 				}
 
 			}
-			// _, _, _, stats := v.getInfo()
+			cve, _, _, _ := v.getInfo()
 			// if stats == "needs-triage" {
 			// 	fmt.Println(v.getInfo())
 			// }
 
-			fmt.Println(v.getInfo())
+			fmt.Println(cve)
 
 		}
 
