@@ -14,7 +14,7 @@ def add_file(outputpath,cveno,jsontext):
     path = outputpath + cveno + ".json"
     print(path)
     with open(path,'w') as f:
-        f.write(str(jsontext))
+        f.write(str(jsontext).replace("'","\""))
         
     print("saved file "+ cveno)
 
@@ -40,7 +40,7 @@ def get_active_cve(path):
     return _files
 
 
-active_cve = get_active_cve(retired_cve_path)
+active_cve = get_active_cve(actve_cve_path)
 
 with open("./feed/nvdcve-1.0-2019.json", 'r') as f:
         temp = json.loads(f.read())
