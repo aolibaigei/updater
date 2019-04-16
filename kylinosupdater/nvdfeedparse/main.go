@@ -1,10 +1,12 @@
 package main
 
 import (
+	"fmt"
+
 	"github.com/akkuman/parseConfig"
 )
 
-var testfile = "./feeds/nvdcve-1.0-2019.json"
+var testfile = "./feed/nvdcve-1.0-2019.json"
 
 // type MyJsonName struct {
 // 	Configurations struct {
@@ -114,6 +116,11 @@ var testfile = "./feeds/nvdcve-1.0-2019.json"
 func main() {
 	var config = parseConfig.New(testfile)
 	// var cve = config.Get("cve > CVE_data_meta > ID")
-	var cve = config.Get("CVE_Items")
+	var cvelist = config.Get("CVE_Items")
 
+	for no, cve := range cvelist.([]interface{}) {
+		if no == 22 {
+			fmt.Println(cve)
+		}
+	}
 }
