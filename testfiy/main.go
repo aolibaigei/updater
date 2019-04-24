@@ -7,12 +7,12 @@ import (
 )
 
 func main() {
-	c, err := semver.NewConstraint(">=1.2.3-beta.12+build345")
+	c, err := semver.NewConstraint(">=4.8.0-56.61-16.04.1")
 	if err != nil {
 		// Handle constraint not being parseable.
 	}
 
-	v, _ := semver.NewVersion("1.2.3-beta.1+build777")
+	v, _ := semver.NewVersion("4.8.0-56.69-16.04.1")
 	if err != nil {
 		// Handle version not being parseable.
 	}
